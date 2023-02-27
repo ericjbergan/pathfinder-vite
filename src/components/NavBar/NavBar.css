@@ -1,0 +1,15 @@
+.main {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+}
+
+a {
+    width: 25%;
+}
