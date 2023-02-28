@@ -1,0 +1,28 @@
+label {
+    margin-right: 5px;
+}
+
+.char-info {
+    display: flex;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.char-info-short {
+    display: flex;
+    text-align: right;
+    margin: auto;
+    width: 50%;
+}
+
+.input-div {
+    width: 25%;
+}
+
+.input-div-short {
+    width: 50%
+}
+
+input {
+    width: 40%;
+}

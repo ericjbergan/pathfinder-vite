@@ -7,40 +7,53 @@ export default function NewCharacter() {
 
     const [state, setState] = useState(
         {
-          charName: '',
-          playerName: '',
-          race: '',
-          alignment: '',
-          gender: '',
-          class: '',
-          deity: '',
-          homeland: '',
-          size: '',
-          age: '',
-          height: '',
-          weight: '',
-          hair: '',
-          eyes: '',
-          xpTotal: '',
-          level: ''
+            charInfo: {
+                charName: '',
+                playerName: '',
+                class: '',
+                level: '',
+                xpTotal: '',
+                alignment: '',
+                race: '',
+                homeland: '',
+                deity: '',
+                gender: '',
+                size: '',
+                age: '',
+                height: '',
+                weight: '',
+                hair: '',
+                eyes: ''
+            }
+          
         })
+
+    // const handleChange = e => {
+    //     const { name, value } = e.target
+    //     console.log(e.target)
+    //     setState(prevState => ({
+    //         ...prevState,
+    //         [name]: value
+    //     }))
+    // }
 
     const handleChange = e => {
         const { name, value } = e.target
+        const newName = name.split('.')
+        const data = state[newName[0]]
+        data[newName[1]] = value
+        // console.log(e.target)
         setState(prevState => ({
             ...prevState,
-            [name]: value
+            [newName[0]]: data
         }))
     }
 
     return (
         <div>
-            <input name='charName' type='text' onChange={handleChange} value={state.charName} />
-            {console.log(state.charName)}
-
-            {/* <Demographics />
+            <Demographics data={ state.charInfo } handleChange={ handleChange } />
             <AbilityScores />
-            <HpInit /> */}
+            <HpInit />
         </div>
     )
 }
