@@ -42,7 +42,6 @@ export default function NewCharacter() {
         const newName = name.split('.')
         const data = state[newName[0]]
         data[newName[1]] = value
-        // console.log(e.target)
         setState(prevState => ({
             ...prevState,
             [newName[0]]: data
