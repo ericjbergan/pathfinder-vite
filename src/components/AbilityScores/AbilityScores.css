@@ -1,0 +1,28 @@
+form {
+    margin-top: 4rem;
+    margin-right: 10%;
+}
+
+.abilities-main {
+    display: flex;
+    text-align: center;
+}
+
+.column-tags {
+    display: flex;
+    width: 50%;
+}
+
+p {
+    width: 20%;
+}
+
+.ability-names {
+    width: 50%;
+    display: flex;
+}
+
+.abil-div {
+    width: 20%;
+}
+
