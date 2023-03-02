@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import Demographics from '../../components/Demographics/Demographics'
 import AbilityScores from '../../components/AbilityScores/AbilityScores'
+import AbilityModCalc from '../../components/AbilityScores/AbilityModCalc'
 import HpInit from '../../components/HpInit/HpInit'
 
 function calcAbilMod(score) {
@@ -44,9 +45,21 @@ export default function NewCharacter() {
                 INTmodifier: '',
                 WISmodifier: '',
                 CHAmodifier: ''
-            },
-          
-        })
+            }
+        }
+    )
+
+    const abilityModifier = score => {
+        if (score === "6" || score === "7") return -2
+        else if (score === "8" || score === "9") return -1
+        else if (score === "10" || score === "11") return 0
+        else if (score === "12" || score === "13") return 1
+        else if (score === "14" || score === "15") return 2
+        else if (score === "16" || score === "17") return 3
+        else if (score === "18" || score === "19") return 4
+        else if (score === "20" || score === "21") return 5
+        else if (score === "22") return 6
+    }
 
     // const handleChange = e => {
     //     const { name, value } = e.target
@@ -73,16 +86,20 @@ export default function NewCharacter() {
     }
 
     const handleAbilityChange = e => {
+        console.log("target: " + e.target.value)
         const { name, value } = e.target
         const modName = name.substring(0, 3) + 'modifier'
-        const data = state[newName[0]]
-        data[newName[1]] = value
+        const mod = abilityModifier(e.target.value)
+        console.log("mod: " + mod)
+        const data = state.abilityScores
+        data[e.target.name] = value
+        data[modName] = mod
         setState(prevState => ({
             ...prevState,
-            [newName[0]]: data
+            abilityScores: data
         }))
 
-        let mod = calcAbilMod(e.target.value)
+
     }
 
     return (

@@ -12,6 +12,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='charName'>Character Name</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.charName' 
                         value={ props.data.charName } 
@@ -20,6 +21,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='playerName'>Player Name</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.playerName' 
                         value={ props.data.playerName } 
@@ -28,6 +30,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='class'>Class</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.class' 
                         value={ props.data.class } 
@@ -36,6 +39,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='level'>Character Level</label>
                     <input 
+                        className='demo-input'
                         type='number' 
                         name='charInfo.level' 
                         value={ props.data.level } 
@@ -46,6 +50,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='xpTotal'>XP Total</label>
                     <input 
+                        className='demo-input'
                         type='number' 
                         name='charInfo.xpTotal' 
                         value={ props.data.xpTotal } 
@@ -54,6 +59,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='alignment'>Alignment</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.alignment' 
                         value={ props.data.alignment } 
@@ -62,6 +68,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='race'>Race</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.race' 
                         value={ props.data.race } 
@@ -70,6 +77,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='homeland'>Homeland</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.homeland' 
                         value={ props.data.homeland } 
@@ -80,6 +88,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='deity'>Deity</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.deity' 
                         value={ props.data.deity } 
@@ -88,6 +97,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='gender'>Gender</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.gender' 
                         value={ props.data.gender } 
@@ -96,6 +106,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='size'>Size</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.size' 
                         value={ props.data.size } 
@@ -104,6 +115,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='age'>Age</label>
                     <input 
+                        className='demo-input'
                         type='number' 
                         name='charInfo.age' 
                         value={ props.data.age } 
@@ -114,6 +126,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='height'>Height</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.height' 
                         value={ props.data.height } 
@@ -122,6 +135,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='weight'>Weight</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.weight' 
                         value={ props.data.weight } 
@@ -130,6 +144,7 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='hair'>Hair</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.hair' 
                         value={ props.data.hair } 
@@ -138,12 +153,13 @@ export default function Demographics(props) {
                 <div className='input-div'>
                     <label htmlFor='eyes'>Eyes</label>
                     <input 
+                        className='demo-input'
                         type='text' 
                         name='charInfo.eyes' 
                         value={ props.data.eyes } 
                         onChange={ props.handleChange } />
                 </div>
-                    { console.log( props.data) }
+                {/* { console.log(props.data) } */}
             </div>
         </form>
     )

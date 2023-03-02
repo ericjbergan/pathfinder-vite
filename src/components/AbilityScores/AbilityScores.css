@@ -22,7 +22,11 @@ p {
     display: flex;
 }
 
-.abil-div {
+.ability-div {
     width: 20%;
+}
+
+.ability-input {
+    text-align: center;
 }
 
