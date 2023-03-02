@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import Demographics from '../../components/Demographics/Demographics'
 import AbilityScores from '../../components/AbilityScores/AbilityScores'
-import AbilityModCalc from '../../components/AbilityScores/AbilityModCalc'
 import HpInit from '../../components/HpInit/HpInit'
 
 function calcAbilMod(score) {
@@ -33,18 +32,30 @@ export default function NewCharacter() {
             },
 
             abilityScores: {
-                STRscore: '',
-                DEXscore: '',
-                CONscore: '',
-                INTscore: '',
-                WISscore: '',
-                CHAscore: '',
-                STRmodifier: '',
-                DEXmodifier: '',
-                CONmodifier: '',
-                INTmodifier: '',
-                WISmodifier: '',
-                CHAmodifier: ''
+                STRscore: '0',
+                DEXscore: '0',
+                CONscore: '0',
+                INTscore: '0',
+                WISscore: '0',
+                CHAscore: '0',
+                STRmodifier: '0',
+                DEXmodifier: '0',
+                CONmodifier: '0',
+                INTmodifier: '0',
+                WISmodifier: '0',
+                CHAmodifier: '0',
+                STRtempAdj: '0',
+                DEXtempAdj: '0',
+                CONtempAdj: '0',
+                INTtempAdj: '0',
+                WIStempAdj: '0',
+                CHAtempAdj: '0',
+                STRtempMod: '0',
+                DEXtempMod: '0',
+                CONtempMod: '0',
+                INTtempMod: '0',
+                WIStempMod: '0',
+                CHAtempMod: '0'
             }
         }
     )
@@ -86,7 +97,7 @@ export default function NewCharacter() {
     }
 
     const handleAbilityChange = e => {
-        console.log("target: " + e.target.value)
+        console.log("value: " + e.target.value)
         const { name, value } = e.target
         const modName = name.substring(0, 3) + 'modifier'
         const mod = abilityModifier(e.target.value)

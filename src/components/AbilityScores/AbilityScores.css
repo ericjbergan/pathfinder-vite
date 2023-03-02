@@ -5,16 +5,6 @@ form {
 
 .abilities-main {
     display: flex;
-    text-align: center;
-}
-
-.column-tags {
-    display: flex;
-    width: 50%;
-}
-
-p {
-    width: 20%;
 }
 
 .ability-names {
@@ -22,11 +12,42 @@ p {
     display: flex;
 }
 
+.column-tags {
+    display: flex;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
 .ability-div {
     width: 20%;
 }
 
 .ability-input {
+    width: 50%;
     text-align: center;
 }
 
+.mod-field-parent {
+    width: 20%;
+}
+
+.mod-field {
+    background-color: white;
+    color: black;
+    width: 55%;
+    margin: auto;
+}
+
+.STRtempMod-input {
+    width: 4rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+  }
