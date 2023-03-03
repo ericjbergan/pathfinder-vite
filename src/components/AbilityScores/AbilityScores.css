@@ -18,6 +18,10 @@ form {
     margin-bottom: 10px;
 }
 
+.ability-score-line {
+    display: flex;
+}
+
 .ability-div {
     width: 20%;
 }

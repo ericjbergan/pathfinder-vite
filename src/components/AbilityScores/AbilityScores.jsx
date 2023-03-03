@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './AbilityScores.css'
+import AbilityLine from './AbilityLine'
 
 export default function AbilityScores(props) {
     return (
@@ -22,59 +23,24 @@ export default function AbilityScores(props) {
                     <div className='ability-div'>Temp Mod</div>
                 </div>
             </div>
-            <div className='ability-names'>
-                <div className='ability-div'>STR</div>
-                <div className='ability-div'>
-                    <input 
-                    className='ability-input'
-                    type='tel'
-                    pattern="^-?[0-9]\d*\.?\d*$"
-                    name='STRscore'
-                    value={ props.data.STRscore }
-                    onChange={ props.handleChange }
-                    min='6'
-                    max='22'
-                     />
-                </div>
-                <div className='mod-field-parent' >
-                    <div className='mod-field' value={ props.data.STRmodifier } >
-                        { props.data.STRmodifier }
-                    </div>
-                </div>
-                <div className='ability-div'>
-                    <input 
-                    className='ability-input'
-                    type='text'
-                    name='STRtempAdj'
-                    value={ props.data.STRtempAdj }
-                    onChange={ props.handleChange }
-                     />
-                </div>
-                <div className='ability-div'>
-                    <input 
-                    className='ability-input'
-                    type='text'
-                    name='STRtempMod'
-                    value={ props.data.STRtempMod }
-                    onChange={ props.handleChange }
-                     />
-                </div>
-            </div>
-            <div>
-                <div>DEX</div>
-            </div>
-            <div className='ability-names'>
-                <div>CON</div>
-            </div>
-            <div>
-                <div>INT</div>
-            </div>
-            <div className='ability-names'>
-                <div>WIS</div>
-            </div>
-            <div>
-                <div>CHA</div>
-            </div>
+            <AbilityLine 
+                data={ props.data } 
+                ability1={ 'STR' } 
+                ability2={ 'DEX' }
+                handleChange={ props.handleChange } 
+            />
+            <AbilityLine 
+                data={ props.data } 
+                ability1={ 'CON' } 
+                ability2={ 'INT' }
+                handleChange={ props.handleChange } 
+            />
+            <AbilityLine 
+                data={ props.data } 
+                ability1={ 'WIS' } 
+                ability2={ 'CHA' }
+                handleChange={ props.handleChange } 
+            />
         </form>
     )
 }
