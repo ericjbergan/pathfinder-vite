@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState } from 'react'
 import Demographics from '../../components/Demographics/Demographics'
 import AbilityScores from '../../components/AbilityScores/AbilityScores'
 import HpInit from '../../components/HpInit/HpInit'
@@ -32,30 +32,30 @@ export default function NewCharacter() {
             },
 
             abilityScores: {
-                STRscore: '0',
-                DEXscore: '0',
-                CONscore: '0',
-                INTscore: '0',
-                WISscore: '0',
-                CHAscore: '0',
-                STRmodifier: '0',
-                DEXmodifier: '0',
-                CONmodifier: '0',
-                INTmodifier: '0',
-                WISmodifier: '0',
-                CHAmodifier: '0',
-                STRtempAdj: '0',
-                DEXtempAdj: '0',
-                CONtempAdj: '0',
-                INTtempAdj: '0',
-                WIStempAdj: '0',
-                CHAtempAdj: '0',
-                STRtempMod: '0',
-                DEXtempMod: '0',
-                CONtempMod: '0',
-                INTtempMod: '0',
-                WIStempMod: '0',
-                CHAtempMod: '0'
+                STRscore: 0,
+                DEXscore: 0,
+                CONscore: 0,
+                INTscore: 0,
+                WISscore: 0,
+                CHAscore: 0,
+                STRmodifier: 0,
+                DEXmodifier: 0,
+                CONmodifier: 0,
+                INTmodifier: 0,
+                WISmodifier: 0,
+                CHAmodifier: 0,
+                STRtempAdj: 0,
+                DEXtempAdj: 0,
+                CONtempAdj: 0,
+                INTtempAdj: 0,
+                WIStempAdj: 0,
+                CHAtempAdj: 0,
+                STRtempMod: 0,
+                DEXtempMod: 0,
+                CONtempMod: 0,
+                INTtempMod: 0,
+                WIStempMod: 0,
+                CHAtempMod: 0
             }
         }
     )
@@ -97,20 +97,27 @@ export default function NewCharacter() {
     }
 
     const handleAbilityChange = e => {
-        console.log("value: " + e.target.value)
+        if ( e.target.name.substring(3) === "score" && 
+            e.target.value < 6 || e.target.value > 22 ) {
+                return
+            }
+
         const { name, value } = e.target
-        const modName = name.substring(0, 3) + 'modifier'
-        const mod = abilityModifier(e.target.value)
-        console.log("mod: " + mod)
+        
+        console.log("name: " + e.target.name)
+        console.log("value: " + e.target.value)
+
         const data = state.abilityScores
         data[e.target.name] = value
-        data[modName] = mod
+        if (name.substring(3) === "score") {
+            const modName = name.substring(0, 3) + "modifier"
+            data[modName] = abilityModifier(e.target.value)
+        }
+        
         setState(prevState => ({
             ...prevState,
             abilityScores: data
         }))
-
-
     }
 
     return (

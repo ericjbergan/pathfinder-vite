@@ -18,7 +18,7 @@ export default function AbilityLine(props) {
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ abilityName1 }
                             value={props.data[abilityName1]}
                             onChange={props.handleChange}
@@ -28,13 +28,15 @@ export default function AbilityLine(props) {
                     </div>
                     <div className='mod-field-parent' >
                         <div className='mod-field' >
-                            {props.data[modName1]}
+                            {parseInt(props.data[modName1]) + 
+                            parseInt(props.data[tempAdjName1]) + 
+                            parseInt(props.data[tempModName1])}
                         </div>
                     </div>
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ tempAdjName1 }
                             value={props.data[tempAdjName1]}
                             onChange={props.handleChange}
@@ -43,7 +45,7 @@ export default function AbilityLine(props) {
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ tempModName1 }
                             value={props.data[tempModName1]}
                             onChange={props.handleChange}
@@ -55,7 +57,7 @@ export default function AbilityLine(props) {
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ abilityName2 }
                             value={props.data[abilityName2]}
                             onChange={props.handleChange}
@@ -65,13 +67,15 @@ export default function AbilityLine(props) {
                     </div>
                     <div className='mod-field-parent' >
                         <div className='mod-field' >
-                            {props.data[modName2]}
+                        {parseInt(props.data[modName2]) + 
+                            parseInt(props.data[tempAdjName2]) + 
+                            parseInt(props.data[tempModName2])}
                         </div>
                     </div>
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ tempAdjName2 }
                             value={props.data[tempAdjName2]}
                             onChange={props.handleChange}
@@ -80,7 +84,7 @@ export default function AbilityLine(props) {
                     <div className='ability-div'>
                         <input
                             className='ability-input'
-                            type='text'
+                            type='number'
                             name={ tempModName2 }
                             value={props.data[tempModName2]}
                             onChange={props.handleChange}
